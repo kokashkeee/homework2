@@ -26,15 +26,18 @@ public class Main {
             System.out.print(x + " ");
         }
         System.out.print("\n");
-        while (x >= 1) {
+        for (; x >= 1; ) {
             System.out.print(x + " ");
             x -= 1;
         }
         System.out.println("\n\nЗадание 3");
         int population = 12000000;
+        double birthRate = (double) 17 / 1000;
+        double mortality = (double) 8 / 1000;
+        System.out.println(birthRate);
         for (int g = 1; g <= 10; g++) {
-            population *= 1.017;
-            population *= 0.992;
+            population = (int) (population + population * birthRate);
+            population = (int) (population - population * mortality);
             System.out.println("Год " + g + ", численность населения составляет " + population);
         }
         System.out.println("\nЗадание 4");
@@ -65,10 +68,12 @@ public class Main {
             System.out.println("Сегодня пятница, " + friday + "-е чисо. Необходимо подготовить отчет");
         }
         System.out.println("\nЗадание 8");
-        int year = 0;
-        for (; year <= 2125; year += 79) {
-            if (year >= 1825) {
-                System.out.println(year);
+        int year = 2025;
+        int beforeYear = year - 200;
+        int afterYear = year + 100;
+        for (int g = 0; g <= afterYear; g += 79) {
+            if (g >= 1825) {
+                System.out.println(g);
             }
         }
     }
