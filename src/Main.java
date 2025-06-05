@@ -1,55 +1,75 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("\nЗадание 1");
-        for (int i = 1; i <= 10; i++) {
-            System.out.printf(i + " ");
-        }
-        System.out.println("\n\nЗадание 2");
-        for (int i = 10; i >= 1; i--) {
-            System.out.printf(i + " ");
-        }
-        System.out.println("\n\nЗадание 3");
-        for (int i = 0; i <= 17; i += 2) {
-            System.out.printf(i + " ");
-        }
-        System.out.println("\n\nЗадание 4");
-        for (int i = 10; i >= -10; i--) {
-            System.out.printf(i + " ");
-        }
-        System.out.println("\n\nЗадание 5");
-        for (int i = 1904; i <= 2096; i++) {
-            if (i % 4 == 0) {
-                System.out.printf(i + " ");
-            }
-        }
-        System.out.println("\n\nЗадание 6");
-        for (int i = 7; i <= 98; i += 7) {
-            System.out.printf(i + " ");
-        }
-        System.out.println("\n\nЗадание 7");
-        for (int i = 1; i <= 512; i *= 2) {
-            System.out.printf(i + " ");
-        }
-        System.out.println("\n\nЗадание 8");
-        int money = 29000;
+        System.out.println("'в банку'");
+        int money = 15000;
         int total = 0;
-        for (int i = 1; i <= 12; i++) {
+        int i = 1;
+        while (total <= 2459000) {
             total += money;
             System.out.println("Месяц " + i + ", сумма накоплений равна " + total + " рублей");
+            i += 1;
         }
-        System.out.println("\nЗадание 9");
-        int money1 = 29000;
-        int total1 = 0;
-        for (int i = 1; i <= 12; i++) {
-            total1 *= 1.01;
-            total1 += money1;
-            System.out.println("Месяц " + i + ", сумма накоплений равна " + total1 + " рублей");
+        System.out.println("'в банк'");
+        total = 0;
+        i = 1;
+        while (total <= 2459000) {
+            total *= 1.01;
+            total += money;
+            System.out.println("Месяц " + i + ", сумма накоплений равна " + total + " рублей");
+            i += 1;
         }
-        System.out.println("\nЗадание 10");
-        int x;
-        for (int i = 1; i <= 10; i++) {
-            x = 2 * i;
-            System.out.println("2*" + i + "=" + x);
+        System.out.println("\nЗадание 2");
+        int x = 0;
+        while (x < 10) {
+            x += 1;
+            System.out.print(x + " ");
+        }
+        System.out.print("\n");
+        while (x >= 1) {
+            System.out.print(x + " ");
+            x -= 1;
+        }
+        System.out.println("\n\nЗадание 3");
+        int population = 12000000;
+        for (int g = 1; g <= 10; g++) {
+            population *= 1.017;
+            population *= 0.992;
+            System.out.println("Год " + g + ", численность населения составляет " + population);
+        }
+        System.out.println("\nЗадание 4");
+        int deposit = 15000;
+        for (int g = 1; deposit <= 12000000; g++) {
+            deposit *= 1.07;
+            System.out.println("Месяц " + g + ", сумма накоплений " + deposit);
+        }
+        System.out.println("\nЗадание 5");
+        deposit = 15000;
+        for (int g = 1; deposit <= 12000000; g++) {
+            deposit *= 1.07;
+            if (g % 6 == 0) {
+                System.out.println("Месяц " + g + ", сумма накоплений " + deposit);
+            }
+        }
+        System.out.println("\nЗадание 6");
+        deposit = 15000;
+        for (int g = 1; g <= 12 * 9; g++) {
+            deposit *= 1.07;
+            if (g % 6 == 0) {
+                System.out.println("Месяц " + g + ", сумма накоплений " + deposit);
+            }
+        }
+        System.out.println("\nЗадание 7");
+        int friday = 4;
+        for (; friday <= 31; friday += 7) {
+            System.out.println("Сегодня пятница, " + friday + "-е чисо. Необходимо подготовить отчет");
+        }
+        System.out.println("\nЗадание 8");
+        int year = 0;
+        for (; year <= 2125; year += 79) {
+            if (year >= 1825) {
+                System.out.println(year);
+            }
         }
     }
 }
