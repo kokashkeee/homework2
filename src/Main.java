@@ -1,80 +1,58 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        //написал функцию ввода массива, сам, похвалите пж
+        //System.out.print("Введите количество элементов массива: ");
+        //Scanner scanner = new Scanner(System.in);
+        //int numOfEl = scanner.nextInt();
+        //int[] mass = new int[numOfEl];
+        //System.out.print("Введите значения элементов массива: ");
+        //for (int i = 0; i < numOfEl; i++) {
+        //    mass[i] = scanner.nextInt();
+        //}
+
         System.out.println("\nЗадание 1");
-        System.out.println("'в банку'");
-        int money = 15000;
-        int total = 0;
-        int i = 1;
-        while (total <= 2459000) {
-            total += money;
-            System.out.println("Месяц " + i + ", сумма накоплений равна " + total + " рублей");
-            i += 1;
-        }
-        System.out.println("'в банк'");
-        total = 0;
-        i = 1;
-        while (total <= 2459000) {
-            total *= 1.01;
-            total += money;
-            System.out.println("Месяц " + i + ", сумма накоплений равна " + total + " рублей");
-            i += 1;
-        }
+        int[] mass = new int[3];
+        mass[0] = 1;
+        mass[1] = 2;
+        mass[2] = 3;
+        System.out.print(mass[0] + " ");
+        System.out.print(mass[1] + " ");
+        System.out.println(mass[2]);
+        double[] array = {1.57, 7.654, 9.986};
+        System.out.print(array[0] + " ");
+        System.out.print(array[1] + " ");
+        System.out.println(array[2]);
+        int[] yachmo = {4, 5};
+        System.out.print(yachmo[0] + " ");
+        System.out.println(yachmo[1]);
+
         System.out.println("\nЗадание 2");
-        int x = 0;
-        while (x < 10) {
-            x += 1;
-            System.out.print(x + " ");
+        System.out.print("Введите количество элементов массива: ");
+        Scanner scanner = new Scanner(System.in);
+        int numOfEl = scanner.nextInt();
+        int[] mass1 = new int[numOfEl];
+        System.out.print("Введите значения элементов массива: ");
+        for (int i = 0; i < numOfEl; i++) {
+            mass1[i] = scanner.nextInt();
         }
-        System.out.print("\n");
-        for (; x >= 1; ) {
-            System.out.print(x + " ");
-            x -= 1;
+        for (int i = 0; i < numOfEl; i++) {
+            System.out.print(mass1[i] + " ");
         }
+
         System.out.println("\n\nЗадание 3");
-        int population = 12000000;
-        double birthRate = (double) 17 / 1000;
-        double mortality = (double) 8 / 1000;
-        System.out.println(birthRate);
-        for (int g = 1; g <= 10; g++) {
-            population = (int) (population + population * birthRate);
-            population = (int) (population - population * mortality);
-            System.out.println("Год " + g + ", численность населения составляет " + population);
+        //распечатал в обратном порядке массив из третьей задачи
+        for (int i = numOfEl - 1; i >= 0; i--) {
+            System.out.print(mass1[i] + " ");
         }
-        System.out.println("\nЗадание 4");
-        int deposit = 15000;
-        for (int g = 1; deposit <= 12000000; g++) {
-            deposit *= 1.07;
-            System.out.println("Месяц " + g + ", сумма накоплений " + deposit);
-        }
-        System.out.println("\nЗадание 5");
-        deposit = 15000;
-        for (int g = 1; deposit <= 12000000; g++) {
-            deposit *= 1.07;
-            if (g % 6 == 0) {
-                System.out.println("Месяц " + g + ", сумма накоплений " + deposit);
+
+        System.out.println("\n\nЗадание 4");
+        for (int i = 0; i < 3; i++) {
+            if (mass[i] % 2 != 0) {
+                mass[i] += 1;
             }
-        }
-        System.out.println("\nЗадание 6");
-        deposit = 15000;
-        for (int g = 1; g <= 12 * 9; g++) {
-            deposit *= 1.07;
-            if (g % 6 == 0) {
-                System.out.println("Месяц " + g + ", сумма накоплений " + deposit);
-            }
-        }
-        System.out.println("\nЗадание 7");
-        int friday = 4;
-        for (; friday <= 31; friday += 7) {
-            System.out.println("Сегодня пятница, " + friday + "-е чисо. Необходимо подготовить отчет");
-        }
-        System.out.println("\nЗадание 8");
-        int year = 2025;
-        int beforeYear = year - 200;
-        int afterYear = year + 100;
-        for (int g = 0; g <= afterYear; g += 79) {
-            if (g >= 1825) {
-                System.out.println(g);
-            }
+            System.out.print(mass[i] + " ");
         }
     }
 }
