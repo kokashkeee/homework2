@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -13,46 +14,37 @@ public class Main {
         //}
 
         System.out.println("\nЗадание 1");
-        int[] mass = new int[3];
-        mass[0] = 1;
-        mass[1] = 2;
-        mass[2] = 3;
-        System.out.print(mass[0] + " ");
-        System.out.print(mass[1] + " ");
-        System.out.println(mass[2]);
-        double[] array = {1.57, 7.654, 9.986};
-        System.out.print(array[0] + " ");
-        System.out.print(array[1] + " ");
-        System.out.println(array[2]);
-        int[] yachmo = {4, 5};
-        System.out.print(yachmo[0] + " ");
-        System.out.println(yachmo[1]);
+        int[] mass = {1, 2, 2, 2, 3};
+        int sum = 0;
+        for (int i : mass) {
+            sum += mass[i];
+        }
+        System.out.println("Сумма трат за месяц составила " + sum + " рублей");
 
         System.out.println("\nЗадание 2");
-        System.out.print("Введите количество элементов массива: ");
-        Scanner scanner = new Scanner(System.in);
-        int numOfEl = scanner.nextInt();
-        int[] mass1 = new int[numOfEl];
-        System.out.print("Введите значения элементов массива: ");
-        for (int i = 0; i < numOfEl; i++) {
-            mass1[i] = scanner.nextInt();
-        }
-        for (int i = 0; i < numOfEl; i++) {
-            System.out.print(mass1[i] + " ");
-        }
-
-        System.out.println("\n\nЗадание 3");
-        //распечатал в обратном порядке массив из третьей задачи
-        for (int i = numOfEl - 1; i >= 0; i--) {
-            System.out.print(mass1[i] + " ");
-        }
-
-        System.out.println("\n\nЗадание 4");
-        for (int i = 0; i < 3; i++) {
-            if (mass[i] % 2 != 0) {
-                mass[i] += 1;
+        int min = mass[0];
+        int max = min;
+        for (int i = 1; i < mass.length; i++) {
+            if (min > mass[i]) {
+                min = mass[i];
             }
-            System.out.print(mass[i] + " ");
+        }
+        for (int i = 1; i < mass.length; i++) {
+            if (max < mass[i]) {
+                max = mass[i];
+            }
+        }
+        System.out.println("Минимальная сумма трат за неделю составила " + min + " рублей");
+        System.out.println("Максимальная сумма трат за неделю составила " + max + " рублей");
+
+        System.out.println("\nЗадание 3");
+        double averagePerWeek = (double) sum / mass.length;
+        System.out.println("Средняя сумма трат за месяц составила " + averagePerWeek + " рублей");
+
+        System.out.println("\nЗадание 4");
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
         }
     }
 }
