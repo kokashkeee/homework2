@@ -15,13 +15,13 @@ public class Main {
 
         System.out.println("\nЗадание 1");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите фамилию: ");
-        String firstName = scanner.next();
         System.out.println("Введите имя: ");
+        String firstName = scanner.next();
+        System.out.println("Введите фамилию: ");
         String middleName = scanner.next();
         System.out.println("Введите отчество: ");
         String lastName = scanner.next();
-        String fullName = firstName + ' ' + middleName + ' ' + lastName;
+        String fullName = middleName + ' ' + firstName + ' ' + lastName;
         System.out.println("Ф.И.О. сотрудника - " + fullName);
 
         System.out.println("\nЗадание 2");
