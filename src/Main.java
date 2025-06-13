@@ -12,7 +12,6 @@ public class Main {
         //for (int i = 0; i < numOfEl; i++) {
         //    mass[i] = scanner.nextInt();
         //}
-
         System.out.println("\nЗадание 1");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите имя: ");
