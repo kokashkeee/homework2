@@ -14,43 +14,22 @@ public class Main {
         //}
 
         System.out.println("\nЗадание 1");
-        int[] mass = {1, 2, 2, 2, 3};
-        int sum = 0;
-        for (int i : mass) {
-            sum += mass[i];
-        }
-        System.out.println("Сумма трат за месяц составила " + sum + " рублей");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите фамилию: ");
+        String firstName = scanner.next();
+        System.out.println("Введите имя: ");
+        String middleName = scanner.next();
+        System.out.println("Введите отчество: ");
+        String lastName = scanner.next();
+        String fullName = firstName + ' ' + middleName + ' ' + lastName;
+        System.out.println("Ф.И.О. сотрудника - " + fullName);
 
         System.out.println("\nЗадание 2");
-        int min = mass[0];
-        int max = min;
-        for (int i = 1; i < mass.length; i++) {
-            if (min > mass[i]) {
-                min = mass[i];
-            }
-        }
-        for (int i = 1; i < mass.length; i++) {
-            if (max < mass[i]) {
-                max = mass[i];
-            }
-        }
-        System.out.println("Минимальная сумма трат за неделю составила " + min + " рублей");
-        System.out.println("Максимальная сумма трат за неделю составила " + max + " рублей");
+        fullName = fullName.toUpperCase();
+        System.out.println("Ф.И.О. сотрудника - " + fullName);
 
         System.out.println("\nЗадание 3");
-        double averagePerWeek = (double) sum / mass.length;
-        System.out.println("Средняя сумма трат за месяц составила " + averagePerWeek + " рублей");
-
-        System.out.println("\nЗадание 4");
-        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        char letter;
-        for (int i = 0; i < reverseFullName.length / 2; i++) {
-            letter = reverseFullName[i];
-            reverseFullName[i] = reverseFullName[reverseFullName.length - i - 1];
-            reverseFullName[reverseFullName.length - i - 1] = letter;
-        }
-        for (int i = 0; i < reverseFullName.length; i++) {
-            System.out.print(reverseFullName[i]);
-        }
+        fullName = fullName.replace('Ё', 'Е');
+        System.out.println("Ф.И.О. сотрудника - " + fullName);
     }
 }
