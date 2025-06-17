@@ -2,7 +2,6 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
-
     public static boolean isLeapYear(int year) {
         if (year % 400 == 0) {
             return true;
