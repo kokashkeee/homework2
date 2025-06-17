@@ -13,7 +13,7 @@ public class Main {
         }
     }
 
-    public static void osMessage(int osType, int clientDeviceYear) {
+    public static void changeVersion(int osType, int clientDeviceYear) {
         int currentYear = LocalDate.now().getYear();
         if (osType == 1) {
             if (clientDeviceYear < currentYear) {
@@ -30,7 +30,7 @@ public class Main {
         }
     }
 
-    public static void deliveryTime(int deliveryDistance) {
+    public static int deliveryTime(int deliveryDistance) {
         int count = 1;
         if (deliveryDistance > 20) {
             count += 1;
@@ -38,13 +38,10 @@ public class Main {
                 count += 1;
                 if (deliveryDistance > 100) {
                     count += 1;
-                    System.out.println("Доставки нет");
                 }
             }
         }
-        if (count < 4) {
-            System.out.println("Потребуется дней: " + count);
-        }
+        return count;
     }
 
     public static void main(String[] args) {
@@ -61,10 +58,14 @@ public class Main {
         System.out.println("\nЗадание 2");
         int osType = 0;
         int clientDevice = 2024;
-        osMessage(osType, clientDevice);
+        changeVersion(osType, clientDevice);
 
         System.out.println("\nЗадание 3");
         int deliveryDistance = 101;
-        deliveryTime(deliveryDistance);
+        if (deliveryTime(deliveryDistance) > 3) {
+            System.out.println("Доставки нет");
+        } else {
+            System.out.println("Потребуется дней: " + deliveryTime(deliveryDistance));
+        }
     }
 }
