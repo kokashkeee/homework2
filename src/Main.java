@@ -13,24 +13,24 @@ public class Main {
         }
     }
 
-    public static int osMessage(int osType, int clientDeviceYear) {
+    public static void osMessage(int osType, int clientDeviceYear) {
         int currentYear = LocalDate.now().getYear();
         if (osType == 1) {
             if (clientDeviceYear < currentYear) {
-                return 1;
+                System.out.println("Установите облегченную версию приложения для Android по ссылке");
             } else {
-                return 2;
+                System.out.println("Установите новую версию приложения для Android по ссылке");
             }
         } else {
             if (clientDeviceYear < currentYear) {
-                return 3;
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             } else {
-                return 4;
+                System.out.println("Установите новую версию приложения для iOS по ссылке");
             }
         }
     }
 
-    public static int deliveryTime(int deliveryDistance) {
+    public static void deliveryTime(int deliveryDistance) {
         int count = 1;
         if (deliveryDistance > 20) {
             count += 1;
@@ -38,10 +38,13 @@ public class Main {
                 count += 1;
                 if (deliveryDistance > 100) {
                     count += 1;
+                    System.out.println("Доставки нет");
                 }
             }
         }
-        return count;
+        if (count < 4) {
+            System.out.println("Потребуется дней: " + count);
+        }
     }
 
     public static void main(String[] args) {
@@ -56,30 +59,12 @@ public class Main {
         }
 
         System.out.println("\nЗадание 2");
-        int osType = 1;
-        int clientDevice = 2025;
-        switch (osMessage(osType, clientDevice)) {
-            case 1:
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-                break;
-            case 2:
-                System.out.println("Установите новую версию приложения для Android по ссылке");
-                break;
-            case 3:
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-                break;
-            case 4:
-                System.out.println("Установите новую версию приложения для iOS по ссылке");
-                break;
-        }
+        int osType = 0;
+        int clientDevice = 2024;
+        osMessage(osType, clientDevice);
 
         System.out.println("\nЗадание 3");
-        int deliveryDistance = 95;
-        if (deliveryTime(deliveryDistance) == 4) {
-            System.out.println("Доставки нет");
-        } else {
-            System.out.println("Потребуется дней: " + deliveryTime(deliveryDistance));
-        }
-
+        int deliveryDistance = 101;
+        deliveryTime(deliveryDistance);
     }
 }
