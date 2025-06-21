@@ -19,25 +19,12 @@ public class Author {
         return name + " " + surname;
     }
 
-    public boolean equalsName(Object other) {
+    @Override
+    public boolean equals(Object other) {
         if (this.getClass() != other.getClass()) {
             return false;
         }
         return name.equals(((Author) other).name);
-    }
-
-    public boolean equalsSurname(Object other) {
-        if (this.getClass() != other.getClass()) {
-            return false;
-        }
-        return surname.equals(((Author) other).surname);
-    }
-
-    public boolean equalsAuthor(Object other) {
-        if (this.getClass() != other.getClass()) {
-            return false;
-        }
-        return this.equalsSurname(other) && this.equalsName(other);
     }
 
     public int hashCode() {

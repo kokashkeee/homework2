@@ -11,17 +11,9 @@ public class Main {
         Book fa = new Book("Цветы для Элджернона", 1966, dan);
         System.out.println(ww.toString());
         System.out.println(fa.toString());
-        System.out.println("equalsName: " + grib.equalsName(dan));
-        System.out.println("equalsName: " + grib.equalsName(grib1));
-        System.out.println("equalsSurname: " + grib.equalsSurname(fa));
-        System.out.println("equalsSurname: " + grib.equalsSurname(grib1));
-        System.out.println("equalsAuthor: " + grib.equalsAuthor(fa));
-        System.out.println("equalsAuthor: " + grib.equalsAuthor(grib1));
-        System.out.println("equalsPublicationYear: " + ww.equalsPublicationYear(fa));
-        System.out.println("equalsPublicationYear: " + ww.equalsPublicationYear(ww1));
-        System.out.println("equalsTitle: " + ww.equalsTitle(fa));
-        System.out.println("equalsTitle: " + ww.equalsTitle(ww1));
-        System.out.println("equalsBooks: " + ww.equalsBooks(fa));
-        System.out.println("equalsBooks: " + ww.equalsBooks(ww1));
+        System.out.println("equalsName: " + grib.equals(dan));
+        System.out.println("equalsName: " + grib.equals(grib1));
+        System.out.println("equalsPublicationYear: " + ww.equals(fa));
+        System.out.println("equalsPublicationYear: " + ww.equals(ww1));
     }
 }

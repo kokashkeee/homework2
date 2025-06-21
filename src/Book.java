@@ -29,24 +29,15 @@ public class Book {
         return author.toString() + " " + title + " " + publicationYear;
     }
 
-    public boolean equalsPublicationYear(Object other) {
+    @Override
+    public boolean equals(Object other) {
         if (this.getClass() != other.getClass()) {
             return false;
         }
         return this.publicationYear == ((Book) other).publicationYear;
     }
 
-    public boolean equalsTitle(Object other) {
-        if (this.getClass() != other.getClass()) {
-            return false;
-        }
-        return title.equals(((Book) other).title);
-    }
-
-    public boolean equalsBooks(Object other) {
-        if (this.getClass() != other.getClass()) {
-            return false;
-        }
-        return this.equalsTitle(other) && this.equalsPublicationYear(other) && this.author.equalsAuthor(((Book) other).author);
+    public int hashCode() {
+        return java.util.Objects.hash();
     }
 }
