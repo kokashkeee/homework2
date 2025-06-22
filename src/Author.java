@@ -24,7 +24,7 @@ public class Author {
         if (this.getClass() != other.getClass()) {
             return false;
         }
-        return name.equals(((Author) other).name);
+        return name.equals(((Author) other).name) && surname.equals(((Author) other).surname);
     }
 
     public int hashCode() {

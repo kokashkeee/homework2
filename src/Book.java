@@ -1,7 +1,7 @@
 public class Book {
     private String title;
     private int publicationYear;
-    Author author;
+    private Author author;
 
     public Book(String title, int publicationYear, Author author) {
         this.title = title;
@@ -24,6 +24,7 @@ public class Book {
     public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
     }
+
     @Override
     public String toString() {
         return author.toString() + " " + title + " " + publicationYear;
@@ -34,7 +35,14 @@ public class Book {
         if (this.getClass() != other.getClass()) {
             return false;
         }
-        return this.publicationYear == ((Book) other).publicationYear;
+        return publicationYear == ((Book) other).publicationYear && author.equals(((Book) other).author) && title.equals(((Book) other).title);
+    }
+
+    public boolean equalsA(Object other) {
+        if (this.getClass() != other.getClass()) {
+            return false;
+        }
+        return this.author.equals(((Book) other).author);
     }
 
     public int hashCode() {
