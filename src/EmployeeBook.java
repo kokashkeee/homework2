@@ -34,7 +34,15 @@ public class EmployeeBook {
 
     public Employee findEmployee(int id) {
         int i = 0;
-        for (; i < employees.length && employees[i].getId() != id; i++) ;
+        for (; i < employees.length;){
+            if(employees[i]==null){
+                i++;
+            } else if (employees[i].getId() != id) {
+                i++;
+            }else {
+                break;
+            }
+        }
         return employees[i];
     }
 

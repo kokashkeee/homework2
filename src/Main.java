@@ -5,6 +5,7 @@ public class Main {
         int departmentsNumber = 2;
         int salaryLess = 100000;
         EmployeeBook employeeBook = new EmployeeBook();
+        Employee newEmployee = new Employee("Школа Савелий Романович", 1, 113000);
         System.out.println("\n\u001B[1mИнформация о сотрудниках:\u001B[0m");
         employeeBook.allEmploysInf();
         System.out.print("\n");
@@ -28,5 +29,14 @@ public class Main {
         employeeBook.departmentsEmploysInf(departmentsNumber);
         System.out.println("\n\u001B[1mСотрудники с ЗП меньше " + salaryLess + "\u001B[0m");
         employeeBook.employeesSalaryLessThan(salaryLess);
+        employeeBook.addEmployee(newEmployee);
+        System.out.println("\n\u001B[1m+1сотрудник:\u001B[0m ");
+        employeeBook.allEmploysInf();
+        int idDel = 5;
+        int id = 11;
+        employeeBook.deleteEmployee(idDel);
+        System.out.println("\n\u001B[1m-1 сотрудник\u001B[0m");
+        employeeBook.allEmploysInf();
+        System.out.println("\n\u001B[1mСотрудник с id: " + id + "\u001B[0m\n" + employeeBook.findEmployee(id).toString());
     }
 }
