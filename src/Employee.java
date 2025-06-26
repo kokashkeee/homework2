@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Objects;
 
 public class Employee {
@@ -38,6 +37,10 @@ public class Employee {
 
     public int getDepartment() {
         return this.departmentEmployee;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
     @Override
